@@ -10,137 +10,30 @@
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-      crossorigin="anonymous"
-    />
     <script src="jQuery.js"></script>
     <script src="script.js"></script>
   </head>
   <body>
-    <nav class="transparent">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="logo">LOGO</div>
-          </div>
-          <div class="col-md-8">
-            <div class="menu">
-              <ul class="menu-items">
-                <li class="menu-item">Home</li>
-                <li class="menu-item">Blog</li>
-                <li class="menu-item">About Us</li>
-                <li class="menu-item">Portfolio</li>
-                <li class="menu-item">search</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+    <nav class="left-sidebar">
+      <div class="logo"><p>*</p></div>
+      <div class="text"><p>sometextblegh</p></div>
+      <div class="menu-nav">
+        <ul class="nav-ul">
+          <li>Blog</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>Portfolio</li>
+        </ul>
+      </div>
+      <hr style="position: relative; top: 390px" />
+      <div class="menu-btn">
+        <a class="nav-btn" href="javascript:void(0);">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </a>
       </div>
     </nav>
-    <div class="slider-wrapper">
-      <div class="carousel owl-carousel">
-        <div class="card card-1">
-          <img src="Pictures/IMG_2.jpg" alt="" />
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-sx-12 text-overlay">
-                <div class="slider-title-1"><h1>Test title 123</h1></div>
-                <div class="slider-desc-1">very descriptive description</div>
-                <div class="slider-btn"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card card-2"><img src="Pictures/IMG_2.jpg" alt="" /></div>
-        <div class="card card-3"><img src="Pictures/IMG_3.jpg" alt="" /></div>
-        <div class="card card-4"><img src="Pictures/IMG_4.jpg" alt="" /></div>
-        <div class="card card-5"><img src="Pictures/IMG_5.jpg" alt="" /></div>
-      </div>
-    </div>
-    <div class="fact-wrapper">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-12 fact">
-            <div class="fact-number">1.</div>
-            <div class="fact-title"><h1>Title 123</h1></div>
-            <div class="fact-text">
-              lorem ipsum sur dom ametlorem ipsum sur dom ametlorem ipsum sur
-              dom ametlorem ipsum sur dom amet
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-12 fact">
-            <div class="fact-number">2.</div>
-            <div class="fact-title"><h1>Title 123</h1></div>
-            <div class="fact-text">
-              lorem ipsum sur dom ametlorem ipsum sur dom ametlorem ipsum sur
-              dom m ipsum sur dom ametlorem ipsum sur dom ametlorem ipsum sur
-              dom amet amet
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-12 fact">
-            <div class="fact-number">3.</div>
-            <div class="fact-title"><h1>Title 123</h1></div>
-            <div class="fact-text">
-              lorem ipsum sur dom ametlorem ipsum sur dom ametlor m ipsum sur
-              dom ametlorem ipsum sur dom ametlorem ipsum sur dom ametem ipsum
-              sur dom amet
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-us-wrapper">
-      <div class="container no-padding-margin w-100">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
-            <div>
-              <img class="about-us-image" src="Pictures/IMG_1.jpg" alt="" />
-            </div>
-          </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-us-text">
-              <div class="about-us-title">dis iz som title bout us</div>
-              <div class="service-image"></div>
-              <div class="service-title"></div>
-              <div class="service-text"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-      crossorigin="anonymous"
-    ></script>
-    <script>
-      $('.carousel').owlCarousel({
-        loop: true,
-        // autoplay: true,
-        // autoplayTimeout: 1000,
-        autoplayHoverPause: true,
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          1000: {
-            items: 1,
-          },
-        },
-      });
-    </script>
   </body>
 </html>

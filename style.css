@@ -1,80 +1,94 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+  background-color: rgb(80, 71, 57) !important ;
 }
 nav {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0);
-  position: absolute;
-  color: chartreuse;
-  z-index: 199;
-}
-.logo {
-  display: block;
-  color: rgb(168, 0, 0);
-  margin: 0px 100px;
-  padding: 20px 20px;
-  font-weight: bolder;
-}
-.menu-items {
-  margin: 0px;
-}
-.menu-item {
-  list-style: none;
-  display: inline-block;
-  padding: 20px 15px;
-}
-.slider-wrapper {
-  width: 100%;
-  display: block;
-}
-
-.carousel .card {
-  text-align: center;
-  color: #fef;
+  background-color: #fff;
   height: 100vh;
-  border: none;
-  cursor: grab;
+  width: 90px;
 }
-.slider-title-1 {
-  padding: 100px;
+nav .logo {
+  background-color: rgb(255, 72, 72);
+  width: 90px;
+  height: 90px;
+  text-align: center;
 }
-.slider-title-1 h1 {
-  font-weight: 800;
-}
-
-.card img {
-  display: block;
-  width: 100%;
-}
-.text-overlay {
-  position: absolute;
-  z-index: 122;
-}
-.fact-wrapper {
-  padding: 10px;
-}
-.fact-number {
-  color: red;
-  font-size: 50px;
+nav .logo p {
+  display: inline;
+  font-size: 80px;
   font-weight: bold;
-  display: inline;
+  color: white;
+  position: relative;
+  top: -5%;
+}
+nav .text {
+  position: relative;
+  top: 35%;
+  left: -22%;
+  transform: rotate(-90deg);
+  display: inline-block;
 }
 
-.fact-title,
-.fact-title h1 {
-  display: inline;
+nav .text p {
+  font-size: 20px;
 }
-.fact {
-  margin: 10px 0px;
+.menu-btn {
+  position: relative;
+  line-height: 5px;
+  top: 380px;
+  right: -2px;
+  padding: 20px;
+  cursor: pointer;
 }
-.about-us-wrapper {
-  margin: 20px 0;
+
+.menu-btn a span {
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 35%;
 }
-.about-us-image {
-  width: 100%;
+.menu-btn a span:nth-child(1) {
+  top: 3px;
 }
-.no-padding-margin {
-  margin: 0 !important;
-  padding: 0 !important;
+.menu-btn a span:nth-child(2) {
+  top: 10px;
+}
+
+.menu-btn a span:nth-child(3) {
+  top: 8px;
+}
+.menu-btn a span:nth-child(4) {
+  top: 15px;
+}
+
+.menu-btn a {
+  width: 30px;
+  height: 40px;
+  display: inline-block;
+  position: relative;
+}
+.menu-btn:hover a span {
+  background-color: red;
+  transition: 1s;
+}
+
+.menu-btn a:active {
+  visibility: none;
+}
+
+.menu-nav {
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 90px;
 }
