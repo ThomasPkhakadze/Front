@@ -3,11 +3,15 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(255, 166, 0) !important;
+}
 .sidebar {
   position: fixed;
   height: 100vh;
   width: 90px;
   background-color: #fff;
+  z-index: 999;
 }
 
 .sidebar-part-1 {
@@ -33,7 +37,7 @@
 }
 .menu-icon:before {
   content: '';
-  background-color: rgb(190, 188, 188);
+  background-color: #bebcbc;
   width: 100%;
   height: 1px;
   position: absolute;
@@ -74,4 +78,93 @@
 
 .menu-btn:hover span {
   background-color: crimson !important;
+}
+
+.sidebar-part-2:before {
+  content: '';
+  display: inline-block;
+  height: 1px;
+  background-color: #bebcbc;
+  position: absolute;
+  bottom: 77px;
+  left: 0;
+  width: 100%;
+}
+
+.sidebar-part-2 {
+  padding: 0 0 0 110px;
+  border-right: 1px solid #dfdfdf;
+  width: auto;
+  height: 100%;
+  left: -400px;
+  width: 400px;
+  position: fixed;
+  background-color: #fff;
+  z-index: -199;
+}
+
+.sidebar-middle {
+  padding: 180px 0 220px;
+  background-color: rgb(255, 255, 255);
+}
+.white-bg {
+  height: 457px;
+  width: 90px;
+  position: fixed;
+  background-color: white;
+  left: 0;
+  top: 90px;
+}
+.white-bg p {
+  transform: rotate(-90deg);
+  font-size: 29px;
+  position: relative;
+  top: 50%;
+}
+.sidebar-middle-menu {
+  display: table-cell;
+  height: 100%;
+  width: 100%;
+  vertical-align: middle;
+}
+
+nav {
+  background-color: transparent;
+  box-shadow: none !important;
+}
+
+.navbar-collapse {
+  display: block !important;
+}
+.nav {
+  height: 225px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.nav > .dropdown {
+  margin: 0;
+  float: none;
+  padding: 15px 20px 15px 0;
+  width: 290px;
+  word-break: break-all;
+  position: initial;
+  display: inline-block;
+  font-size: 40px;
+  overflow-y: hidden;
+}
+.sub-menu {
+  height: 100%;
+  width: 200px;
+  background: black;
+  position: absolute;
+  left: 400px;
+  top: 0;
+  color: white;
+  display: none;
+  animation: fadeIn 0.0000002s;
+}
+.sub-menu p,
+.sub-menu li {
+  color: white;
+  list-style: none;
 }

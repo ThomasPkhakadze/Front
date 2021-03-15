@@ -4,6 +4,9 @@ $(document).ready(function () {
     if ($(this).attr('data-click-state') == 1) {
       // set to unclicked
       $(this).attr('data-click-state', 0);
+
+      // rotating animation
+      //==========================================================
       // bg-color to starting one
       $('.menu-btn span').css('backgroundColor', '#161515');
       // simple animations
@@ -20,6 +23,8 @@ $(document).ready(function () {
         },
         1000
       );
+      // Sidebar Slide to left
+      $('.sidebar-part-2').animate({ left: '-400px' });
       // else dis
     } else {
       // color to active
@@ -49,6 +54,16 @@ $(document).ready(function () {
         }
       );
       $(this).attr('data-click-state', 1);
+      // Sidebar Sliding Right
+      $('.sidebar-part-2').animate({ left: '0' });
     }
+  });
+
+  // Sub menu fadein-out on hover
+  $('.dropdown').mouseover(function () {
+    $(this).children().show();
+  });
+  $('.dropdown').mouseleave(function () {
+    $('.sub-menu').hide();
   });
 });
