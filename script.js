@@ -60,10 +60,12 @@ $(document).ready(function () {
   });
 
   // Sub menu fadein-out on hover
-  $('.dropdown').mouseover(function () {
-    $(this).children().show();
+  $('.dropdown').hover(function () {
+    $(this).addClass('active');
+    $('.active').children().fadeIn(30);
   });
   $('.dropdown').mouseleave(function () {
-    $('.sub-menu').hide();
+    $(this).removeClass('active');
+    // $('.sub-menu').fadeOut(30);
   });
 });
