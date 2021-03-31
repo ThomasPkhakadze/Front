@@ -62,10 +62,10 @@ $(document).ready(function () {
   // Sub menu fadein-out on hover
   $('.dropdown').hover(function () {
     $(this).addClass('active');
-    $('.active').children().fadeIn(30);
+    $('.active').children().fadeIn(300);
   });
   $('.dropdown').mouseleave(function () {
     $(this).removeClass('active');
-    // $('.sub-menu').fadeOut(30);
+    $('.sub-menu').fadeOut(300);
   });
 });
