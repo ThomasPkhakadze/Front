@@ -18,11 +18,9 @@
         position: absolute;
       }
       img {
-        vertical-align: middle;
         height: 100vh;
         width: 100vw;
         object-fit: cover;
-        object-position: center;
       }
 
       /* Slideshow container */
@@ -30,35 +28,6 @@
         max-width: 1000px;
         /* position: relative;
         margin: auto; */
-      }
-
-      /* Next & previous buttons */
-      .prev,
-      .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        user-select: none;
-      }
-
-      /* Position the "next button" to the right */
-      .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-      }
-
-      /* On hover, add a black background color with a little bit see-through */
-      .prev:hover,
-      .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
       }
 
       /* Caption text */
@@ -92,37 +61,6 @@
         transition: background-color 0.6s ease;
       }
 
-      /* .active,
-      .rectangle:hover {
-        background-color: #717171;
-      } */
-
-      /* Fading animation */
-      .fade {
-        -webkit-animation-name: fade;
-        -webkit-animation-duration: 1.5s;
-        animation-name: fade;
-        animation-duration: 5.5s;
-      }
-
-      @-webkit-keyframes fade {
-        from {
-          opacity: 0.4;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
-      @keyframes fade {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
-
       /* On smaller screens, decrease text size */
       @media only screen and (max-width: 300px) {
         .prev,
@@ -137,6 +75,7 @@
         right: 0;
         width: inherit;
         overflow: hidden;
+        z-index: 100;
       }
       .fromLeft {
         background-color: lawngreen;
@@ -150,7 +89,7 @@
   </head>
   <body>
     <div class="slideshow-container">
-      <div class="mySlides fade" id="1">
+      <div class="mySlides active" id="element1">
         <div class="numbertext">1 / 3</div>
         <img
           src="https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
@@ -159,7 +98,7 @@
         <div class="text">Caption Text</div>
       </div>
 
-      <div class="mySlides fade" id="2">
+      <div class="mySlides" id="element2">
         <div class="numbertext">2 / 3</div>
         <img
           src="https://assets.hongkiat.com/uploads/nature-photography/autumn-poolside.jpg"
@@ -168,7 +107,7 @@
         <div class="text">Caption Two</div>
       </div>
 
-      <div class="mySlides fade" id="3">
+      <div class="mySlides" id="element3">
         <div class="numbertext">3 / 3</div>
         <img
           src="https://iso.500px.com/wp-content/uploads/2016/03/stock-photo-142984111.jpg"
@@ -179,17 +118,17 @@
     </div>
     <br />
     <div class="rectangle-container">
-      <span class="rectangle" id="1"><div></div></span>
-      <span class="rectangle" id="2"><div></div></span>
-      <span class="rectangle" id="3"><div></div></span>
+      <div class="rectangle" id="element1"><div></div></div>
+      <div class="rectangle" id="element2"><div></div></div>
+      <div class="rectangle" id="element3"><div></div></div>
     </div>
 
     <script>
-      //on hover add effect
+      // on hover add effect
       $('.rectangle').hover(
         function () {
           $(this).children().addClass('fromLeft');
-          $(this).children().animate({ right: '0px' }, 1000);
+          $(this).children().animate({ right: '0px' }, 800);
         },
         function () {
           $(this).children().animate({ right: '350px' }, 500);
@@ -198,13 +137,32 @@
           }, 1000);
         }
       );
-      // on click change photo
+      // on click change slide
 
-      $('.rectangle').click(function () {
+      // making first slide & rectangle appear and active on default
+      $('.slideshow-container').children(':first-child').show();
+
+      //on click not active rectangle
+      $('.rectangle:not(.active)').click(function () {
+        $('.mySlides').css('zIndex', '1');
+        // remove rectangle active class
+        $('.rectangle.active').removeClass('active');
+        // capture id of an rectangle element
         var id = $(this).attr('id');
-        console.log(id);
+        // show slide with the same id
+        $('.mySlides#' + id).fadeIn(1700);
+        // make active slide bellow the upcoming slide
+        $('.mySlides#' + id).css('zIndex', '2');
 
-        $('.mySlides#' + id).show();
+        // setting timeout to maintain previus slide as a background
+        setTimeout(function () {
+          // then after next slide arrives hiding and removing/adding active classes
+          $('.mySlides.active').hide();
+          $('.mySlides.active').removeClass('active');
+
+          $('.rectangle#' + id).addClass('active');
+          $('.mySlides#' + id).addClass('active');
+        }, 1700);
       });
     </script>
   </body>
