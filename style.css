@@ -212,6 +212,14 @@ img {
   object-fit: cover;
 }
 
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -243,24 +251,16 @@ img {
 .rectangle {
   cursor: pointer;
   height: 50px;
-  width: 320px;
+  width: 300px;
   margin: 2px;
   background-color: rgba(0, 0, 0, 0.178);
   display: block;
   transition: background-color 0.6s ease;
 }
 
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
-    font-size: 11px;
-  }
-}
 .rectangle-container {
   position: absolute;
-  top: 35%;
+  top: 40%;
   right: 0;
   width: inherit;
   overflow: hidden;
@@ -277,7 +277,7 @@ img {
   color: white;
   position: relative;
   z-index: 200;
-  top: 30%;
+  top: 25%;
   vertical-align: center;
 }
 .rec-text p {
@@ -292,6 +292,6 @@ img {
   width: 50px;
   height: 2px;
   position: absolute;
-  top: 10px;
-  left: 20%;
+  top: 13.5px;
+  left: 23%;
 }
