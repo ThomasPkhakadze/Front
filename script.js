@@ -87,8 +87,13 @@ $(document).ready(function () {
   // making first slide & rectangle appear and active on default
   $('.slideshow-container').children(':first-child').show();
 
+  // ////////////////////// SLIDER
+
   //on click not active rectangle
   $('.rectangle:not(.active)').click(function () {
+    // make text disappear
+    // $('.slider-text').css('visibility', 'hidden');
+
     $('.mySlides').css('zIndex', '1');
     // remove rectangle active class
     $('.rectangle.active').removeClass('active');
@@ -108,19 +113,20 @@ $(document).ready(function () {
       $('.rectangle#' + id).addClass('active');
       $('.mySlides#' + id).addClass('active');
     }, 1700);
+    $('.slider-text').css('visibility', 'visible');
   });
 
   // When window top will scroll thru the slider make it blurry
   $(window).scroll(function () {
     var windowScroll = $(window).scrollTop();
-    var textOffset = $('.text').offset().top;
-    var distance = textOffset - windowScroll;
+    var sliderHeight = $('.mySlides img').innerHeight();
+    var distance = sliderHeight - windowScroll;
     console.log(distance);
-    if (distance <= 400 && distance > 200) {
+    if (distance <= 600 && distance > 400) {
       $('.mySlides img').css('filter', 'blur(2px)');
-    } else if (distance < 200 && distance > 100) {
+    } else if (distance < 400 && distance > 200) {
       $('.mySlides img').css('filter', 'blur(8px)');
-    } else if (distance < 100) {
+    } else if (distance < 200) {
       $('.mySlides img').css('filter', 'blur(11px)');
     } else {
       $('.mySlides img').css('filter', 'blur(0px)');

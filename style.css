@@ -227,9 +227,7 @@ nav {
 
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
-  .prev,
-  .next,
-  .text {
+  .slider-text {
     font-size: 11px;
   }
 }
@@ -240,17 +238,39 @@ nav {
         margin: auto; */
 }
 
-/* Caption text */
-.text {
+/* Slider text */
+.slider-text {
   color: #f2f2f2;
-  font-size: 15px;
+  font-size: 95px;
+  font-family: fantasy;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 188px;
+  left: 190px;
+  visibility: hidden;
   width: 100%;
-  text-align: center;
+  animation: fadeUp 3.2s ease-in;
 }
 
+@keyframes fadeUp {
+  0% {
+    visibility: hidden;
+  }
+  3% {
+    visibility: visible;
+    bottom: 175px;
+    filter: blur(15px);
+  }
+  50% {
+    bottom: 181px;
+    filter: blur(3px);
+  }
+  100% {
+    visibility: visible;
+    bottom: 188px;
+    filter: blur(0.05px);
+  }
+}
 /* Number text (1/3 etc) */
 .numbertext {
   color: #f2f2f2;
