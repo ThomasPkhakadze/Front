@@ -109,4 +109,21 @@ $(document).ready(function () {
       $('.mySlides#' + id).addClass('active');
     }, 1700);
   });
+
+  // When window top will scroll thru the slider make it blurry
+  $(window).scroll(function () {
+    var windowScroll = $(window).scrollTop();
+    var textOffset = $('.text').offset().top;
+    var distance = textOffset - windowScroll;
+    console.log(distance);
+    if (distance <= 400 && distance > 200) {
+      $('.mySlides img').css('filter', 'blur(2px)');
+    } else if (distance < 200 && distance > 100) {
+      $('.mySlides img').css('filter', 'blur(8px)');
+    } else if (distance < 100) {
+      $('.mySlides img').css('filter', 'blur(11px)');
+    } else {
+      $('.mySlides img').css('filter', 'blur(0px)');
+    }
+  });
 });

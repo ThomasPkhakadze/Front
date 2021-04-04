@@ -7,6 +7,7 @@ body {
   height: 200vh;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
+/* Sidebar */
 .sidebar {
   position: fixed;
   height: 100vh;
@@ -36,6 +37,8 @@ body {
   position: absolute;
   bottom: 5px;
 }
+/* Sidebar Menu */
+
 .menu-icon:before {
   content: '';
   background-color: #bebcbc;
@@ -128,6 +131,7 @@ body {
   width: 100%;
   vertical-align: middle;
 }
+/* Inner Sidebar */
 
 nav {
   background-color: transparent;
@@ -200,16 +204,25 @@ nav {
   left: 0;
   font-size: 20px;
 }
+/* Slider */
+
 .mySlides {
   display: none;
   height: 500px;
   width: 100vw;
   position: absolute;
 }
-img {
+.mySlides > img {
   height: 100vh;
   width: 100vw;
   object-fit: cover;
+}
+.blur {
+  width: 100%;
+  padding-left: 90px;
+  height: 100vh;
+  /* display: none; */
+  z-index: 50;
 }
 
 /* On smaller screens, decrease text size */
