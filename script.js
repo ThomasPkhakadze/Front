@@ -120,15 +120,22 @@ $(document).ready(function () {
   $(window).scroll(function () {
     var windowScroll = $(window).scrollTop();
     var sliderHeight = $('.mySlides img').innerHeight();
-    var distance = sliderHeight - windowScroll;
-    if (distance <= 600 && distance > 400) {
+    var blurDistance = sliderHeight - windowScroll;
+    if (blurDistance <= 600 && blurDistance > 400) {
       $('.mySlides img').css('filter', 'blur(2px)');
-    } else if (distance < 400 && distance > 200) {
+    } else if (blurDistance < 400 && blurDistance > 200) {
       $('.mySlides img').css('filter', 'blur(8px)');
-    } else if (distance < 200) {
+    } else if (blurDistance < 200) {
       $('.mySlides img').css('filter', 'blur(11px)');
     } else {
       $('.mySlides img').css('filter', 'blur(0px)');
+    }
+    // make animations happen when reaching certain element
+    var aboutUs = $('.about-us').offset().top;
+    var aboutUsDistance = aboutUs - windowScroll;
+    if (aboutUsDistance < 200) {
+      $('.about-us').addClass('appear');
+      $('.about-us').css('visibility', 'visible');
     }
   });
 });

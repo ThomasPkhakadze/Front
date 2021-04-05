@@ -319,8 +319,23 @@ nav {
 .about-us {
   padding-left: 90px;
   margin-top: 30px;
+  visibility: hidden;
 }
 .about-us img {
   width: 100%;
   margin: 15px 0 10px;
+}
+/* effect for about us */
+@keyframes appear {
+  0% {
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.appear {
+  animation: appear 1s;
 }
