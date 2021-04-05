@@ -121,7 +121,6 @@ $(document).ready(function () {
     var windowScroll = $(window).scrollTop();
     var sliderHeight = $('.mySlides img').innerHeight();
     var distance = sliderHeight - windowScroll;
-    console.log(distance);
     if (distance <= 600 && distance > 400) {
       $('.mySlides img').css('filter', 'blur(2px)');
     } else if (distance < 400 && distance > 200) {
