@@ -3,8 +3,7 @@
   padding: 0;
 }
 body {
-  background-color: rgb(255, 244, 223) !important;
-  height: 200vh;
+  background-color: #ffffff !important;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 /* Sidebar */
@@ -157,6 +156,22 @@ nav {
   font-size: 40px;
   overflow-y: hidden;
 }
+/* navbar scrollbar */
+.nav::-webkit-scrollbar {
+  width: 8px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Handle */
+.nav::-webkit-scrollbar-thumb {
+  background: crimson;
+}
+
+/* Handle on hover */
+.nav::-webkit-scrollbar-thumb:hover {
+  background: rgb(170, 1, 35);
+}
+/* sidebar child bar */
 .sub-menu {
   height: 100%;
   width: 250px;
@@ -212,7 +227,6 @@ nav {
 .mySlides {
   display: none;
   overflow: hidden;
-  width: 100vw;
   position: absolute;
 }
 .mySlides > img {
@@ -222,7 +236,7 @@ nav {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
+  max-width: 100vw;
   height: 100vh;
   border: #161515;
 }
@@ -353,9 +367,9 @@ nav {
   background-color: #2c2c2c;
   border: 2px solid #2c2c2c;
   position: relative;
-  top: 100px;
+  top: 30%;
   font-size: 14px;
-  transition: background-color 0.2gs ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 .about-us-button > p {
   padding: 5px 25px 5px 25px;
@@ -364,6 +378,46 @@ nav {
   font-weight: 600;
 }
 .about-us-button:hover {
-  background-color: #faf3e4;
+  background-color: #fff;
   color: #2c2c2c;
+}
+/* Services  */
+.services {
+  width: 100%;
+  background-color: #f5f5f5;
+  padding: 20px 0 20px 90px;
+  margin-top: 60px;
+}
+
+.services-single {
+  margin: 40px auto;
+  width: 200px;
+}
+.services-title,
+.services-text {
+  position: relative;
+
+  margin: 10px;
+}
+.services-title {
+  left: 5px;
+  width: 150px;
+}
+.services-text {
+  width: 180px;
+  left: -15px;
+}
+.services-img {
+  border-radius: 50%;
+  background-color: #fff;
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+.services-img > img {
+  height: 50px;
+  position: relative;
+  top: 35px;
+  left: 35px;
+  color: crimson;
 }
