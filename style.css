@@ -392,6 +392,11 @@ nav {
 .services-single {
   margin: 40px auto;
   width: 200px;
+  transition: all ease-in-out 2s;
+  position: relative;
+}
+.services-single-wrapper {
+  overflow: hidden;
 }
 .services-title,
 .services-text {
@@ -419,5 +424,12 @@ nav {
   position: relative;
   top: 35px;
   left: 35px;
-  color: crimson;
+}
+@keyframes slide {
+  0% {
+    left: 200px;
+  }
+  100% {
+    left: 35px;
+  }
 }
