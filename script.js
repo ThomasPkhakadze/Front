@@ -131,11 +131,29 @@ $(document).ready(function () {
       $('.mySlides img').css('filter', 'blur(0px)');
     }
     // make animations happen when reaching certain element
+    // 1) Make About section appear
     var aboutUs = $('.about-us').offset().top;
     var aboutUsDistance = aboutUs - windowScroll;
     if (aboutUsDistance < 200) {
       $('.about-us').addClass('appear');
       $('.about-us').css('visibility', 'visible');
+    }
+    // 2) Slide in Services
+    var services = $('.services-single-wrapper').offset().top;
+    var servicesDistance = services - windowScroll;
+    if (servicesDistance < 200) {
+      var delay = 0;
+      $('.services-single').each(function () {
+        $(this).delay(delay).animate(
+          {
+            left: '0px',
+          },
+          500
+        );
+        // $('.services-single').addClass('slide');
+        // $('.services-single').css('visibility', 'visible');
+        delay += 500;
+      });
     }
   });
 });
