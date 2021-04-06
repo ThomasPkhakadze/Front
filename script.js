@@ -141,7 +141,7 @@ $(document).ready(function () {
     // 2) Slide in Services
     var services = $('.services-single-wrapper').offset().top;
     var servicesDistance = services - windowScroll;
-    if (servicesDistance < 200) {
+    if (servicesDistance < 300) {
       var delay = 0;
       $('.services-single').each(function () {
         $(this).delay(delay).animate(
