@@ -116,6 +116,9 @@ $(document).ready(function () {
     $('.slider-text').css('visibility', 'visible');
   });
 
+  // repeate variable for number increment function
+  var repeate = true;
+
   // When window top will scroll thru the slider make it blurry
   $(window).scroll(function () {
     var windowScroll = $(window).scrollTop();
@@ -150,10 +153,36 @@ $(document).ready(function () {
           },
           500
         );
-        // $('.services-single').addClass('slide');
-        // $('.services-single').css('visibility', 'visible');
         delay += 500;
       });
+    }
+    // 3) Increase Num values
+    var Numbers = $('.numbers').offset().top;
+    var NumberDistance = Numbers - windowScroll;
+    // Increase Value function
+    function animateValue(obj, start, end, duration) {
+      let startTimestamp = null;
+      const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.innerHTML = Math.floor(progress * (end - start) + start);
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        }
+      };
+      window.requestAnimationFrame(step);
+    }
+
+    const obj1 = document.getElementById('number1');
+    const obj2 = document.getElementById('number2');
+    const obj3 = document.getElementById('number3');
+    const obj4 = document.getElementById('number4');
+    if (NumberDistance < 300 && repeate == true) {
+      repeate = false;
+      animateValue(obj1, 0, 210, 1500);
+      animateValue(obj2, 0, 600, 1500);
+      animateValue(obj3, 0, 3000, 1500);
+      animateValue(obj4, 0, 98, 1500);
     }
   });
 });
