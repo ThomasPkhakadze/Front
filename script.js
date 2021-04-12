@@ -94,24 +94,24 @@ $(document).ready(function () {
     // make text disappear
     // $('.slider-text').css('visibility', 'hidden');
 
-    $('.mySlides').css('zIndex', '1');
+    $('.slider-single').css('zIndex', '1');
     // remove rectangle active class
     $('.rectangle.active').removeClass('active');
     // capture id of an rectangle element
     var id = $(this).attr('id');
     // show slide with the same id
-    $('.mySlides#' + id).fadeIn(1700);
+    $('.slider-single#' + id).fadeIn(1700);
     // make active slide bellow the upcoming slide
-    $('.mySlides#' + id).css('zIndex', '2');
+    $('.slider-single#' + id).css('zIndex', '2');
 
     // setting timeout to maintain previus slide as a background
     setTimeout(function () {
       // then after next slide arrives hiding and removing/adding active classes
-      $('.mySlides.active').hide();
-      $('.mySlides.active').removeClass('active');
+      $('.slider-single.active').hide();
+      $('.slider-single.active').removeClass('active');
 
-      $('.rectangle#' + id).addClass('active');
-      $('.mySlides#' + id).addClass('active');
+      $('.recslider-singletangle#' + id).addClass('active');
+      $('.slider-single#' + id).addClass('active');
     }, 1700);
     $('.slider-text').css('visibility', 'visible');
   });
@@ -119,6 +119,7 @@ $(document).ready(function () {
   // repeate variable for number increment function
   var repeate = true;
 
+  ///////////////////////////////////////////////////////// ANIMATIONSSSS
   // When window top will scroll thru the slider make it blurry
   $(window).scroll(function () {
     var windowScroll = $(window).scrollTop();
