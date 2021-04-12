@@ -180,8 +180,8 @@ $(document).ready(function () {
     if (NumberDistance < 300 && repeate == true) {
       repeate = false;
       $('.number-wrap')
-        .animate({ top: '50px', opacity: '1' }, 1500)
-        .css('display', 'inline-block');
+        .animate({ top: '0px', opacity: '1' }, 1500)
+        .css('display', 'block');
       animateValue(obj1, 0, 210, 1500);
       animateValue(obj2, 0, 600, 1500);
       animateValue(obj3, 0, 3000, 1500);
